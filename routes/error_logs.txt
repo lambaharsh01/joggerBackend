@@ -1,0 +1,117 @@
+Error Time 16-02-2024 08:57:18 am at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:439:28
+
+Error Time 16-02-2024 08:57:22 am at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:439:28
+
+Error Time 16-02-2024 08:57:24 am at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:439:28
+
+Error Time 16-02-2024 08:58:59 am at auth_user_login 
+MongooseError: Operation `user_infos.findOne()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:186:23)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+
+Error Time 16-02-2024 06:53:32 pm at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:440:28
+
+Error Time 16-02-2024 06:55:34 pm at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:440:28
+
+Error Time 16-02-2024 06:56:35 pm at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:443:28
+
+Error Time 16-02-2024 06:56:37 pm at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:443:28
+
+Error Time 16-02-2024 07:00:00 pm at auth_user_login 
+TypeError: Cannot set properties of undefined (setting 'user_id')
+    at C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\routes\routes.js:445:28
+
+Error Time 18-02-2024 05:04:28 pm at add_list_data 
+MongoNetworkError: connection 7 to [64:ff9b::d7e:12cc]:27017 closed
+    at Connection.onClose (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongodb\lib\cmap\connection.js:121:28)
+    at TLSSocket.<anonymous> (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongodb\lib\cmap\connection.js:63:46)
+    at TLSSocket.emit (node:events:513:28)
+    at node:net:313:12
+    at TCP.done (node:_tls_wrap:587:7)
+
+Error Time 18-02-2024 05:04:43 pm at add_list_data 
+MongoNetworkError: connection 6 to [64:ff9b::d7e:12cc]:27017 closed
+    at Connection.onClose (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongodb\lib\cmap\connection.js:121:28)
+    at TLSSocket.<anonymous> (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongodb\lib\cmap\connection.js:63:46)
+    at TLSSocket.emit (node:events:513:28)
+    at node:net:313:12
+    at TCP.done (node:_tls_wrap:587:7)
+
+Error Time 18-02-2024 05:04:57 pm at add_list_data 
+MongoServerSelectionError: getaddrinfo ENOTFOUND ac-lozeorc-shard-00-01.tj2jd68.mongodb.net
+    at EventTarget.<anonymous> (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongodb\lib\sdam\topology.js:276:34)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:731:20)
+    at EventTarget.dispatchEvent (node:internal/event_target:673:26)
+    at abortSignal (node:internal/abort_controller:308:10)
+    at TimeoutController.abort (node:internal/abort_controller:338:5)
+    at Timeout.<anonymous> (C:\Users\Harsh's PC\OneDrive\Desktop\NIKE CLONE\server\node_modules\mongodb\lib\utils.js:1010:92)
+    at listOnTimeout (node:internal/timers:564:17)
+    at process.processTimers (node:internal/timers:507:7)
+
+Error Time 02-06-2024 11:58:52 am at get_user_order_info 
+ReferenceError: user_id is not defined
+    at exports.get_user_order_info (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\ViewController\orderInfo\controller.js:8:40)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\PROJECTS\NIKE CLONE\server\node_modules\express\lib\router\index.js:47:12)
+
+Error Time 02-06-2024 08:48:47 pm at auth_user_login 
+ReferenceError: JingalalaHurHur is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\login\router.js:15:21
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
+Error Time 02-06-2024 08:48:48 pm at auth_user_login 
+ReferenceError: JingalalaHurHur is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\login\router.js:15:21
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
+Error Time 02-06-2024 08:53:30 pm at auth_user_login 
+ReferenceError: JingalalaHurHur is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\login\router.js:15:21
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
