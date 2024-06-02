@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 let routes=require('./routes/routes.js');
 const session=require('express-session');
 
+const port = process.env.PORT || 8080;
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
 
@@ -23,8 +25,8 @@ app.use(session({
 
 app.use('/', routes)
 
-app.listen(8080,()=>{
-    console.log('Port 8080')
+app.listen(port, ()=>{
+    console.log('Listening on Port: '+port)
 })
 
 
