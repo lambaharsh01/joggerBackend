@@ -4,6 +4,8 @@ require('dotenv').config({path:'config.env'});
 const bodyParser = require('body-parser');
 let routes=require('./routes/routes.js');
 const session=require('express-session');
+const cors=require('cors');
+
 
 const port = process.env.PORT || 8080;
 
@@ -21,6 +23,13 @@ app.use(session({
         sameSite: 'strict',
     }
 }));
+
+app.use(cors({
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', 
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  }));
 
 
 app.use('/', routes)
