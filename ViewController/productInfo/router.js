@@ -2,9 +2,11 @@ const express=require('express');
 const multer=require('multer')
 const route=express.Router();
 
-const fileAuth=require('../../middleWare/fileAuth.js');
+const fileAuth=require('../../middleWare/jwtAuth.js');
+const jwtAuth=require('../../middleWare/fileAuth.js');
 
 const controller=require('./controller');
+
 
 
 function generateRandomValue(){
@@ -75,7 +77,7 @@ route.get('/getProductsLazily/:from/:main_catagory/:catagory/:sub_catagory', con
 
 route.delete('/deleteThisProduct/:productId', controller.deleteThisProduct);
 
-route.get('/get_cart_details_per_user', controller.get_cart_details_per_user);
+route.get('/get_cart_details_per_user', jwtAuth, controller.get_cart_details_per_user);
 
 route.post('/place_order', controller.place_order);
     

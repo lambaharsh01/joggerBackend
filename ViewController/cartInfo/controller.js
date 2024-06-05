@@ -4,10 +4,7 @@ const recordErr=require('../../middleWare/recordErrors');
 
 exports.isInCart=async(req,res)=>{
     try{
-
-// csrf
-
-let userId=req.session.user_id;
+let userId=req.user.user_id;
 let productId=req.params.productId;
 
  let existingProduct=await cart_info.findOne({user_id:userId, product_id:productId});

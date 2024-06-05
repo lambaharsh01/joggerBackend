@@ -2,8 +2,12 @@ const express=require('express');
 const route=express.Router();
 
 let user_details=require('../../db_schemas/user_details.js');
+let signup_auth=require('../../db_schemas/signup_authentication.js');
 
 const { otpMailOptions, mailTransport} =require('../../middleWare/mailer.js');
+
+const bcrypt=require('bcryptjs');
+
 const recordErr=require('../../middleWare/recordErrors');
 
 function generateRandomValue(){
@@ -28,57 +32,51 @@ function generateRandomValue(){
 route.post('/send_email_otp', async(req,res)=>{
     try{
 
-if(req.session.signUpTries){
-    delete req.session.signUpOtp;
-    delete req.session.signUpEmail;
-    delete req.session.signUpTries;
-}
-
 let emailId=req.body.emailId;
 
 let user_count=await user_details.findOne({email:emailId});
-if(user_count){
-    res.status(409).send('409')
+if(user_count)
+   return res.status(409).send('409')
 
-}else{
+
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    if(emailRegex.test(emailId)){
+if(!emailRegex.test(emailId))
+   return res.status(421).send('421');
 
-        let otp=generateRandomValue();
+    const thirtyMinutesAgo = new Date(new Date().getTime() - 30 * 60 * 1000);
+
+    const count = await signup_auth.countDocuments({
+    email: emailId,
+    otp_sent_time: { $gte: thirtyMinutesAgo }
+    });
+
+    if(count>5)
+        return res.status(402).send('402');
+
+let otp=generateRandomValue();
 
 let local_mail_option={...otpMailOptions};
 local_mail_option.to=emailId.trim();
 local_mail_option.text=`${otp} is your SignUp OTP`;
 
 
-await new Promise((resolve, reject)=>{
-mailTransport.sendMail(local_mail_option, (error, info)=>{
-    if(error) reject(error);
-    resolve(info);
-});
-});
 
-req.session.signUpOtp=otp;
-req.session.signUpEmail=emailId;
-res.status(200).send('200');
+    let authObject={
+        email:emailId.trim(),
+        otp:otp
+    };
+    
+    await new Promise((resolve, reject)=>{
+        mailTransport.sendMail(local_mail_option, (error, info)=>{
+            if(error) reject(error);
+            resolve(info);
+        });
+    });
 
-// mailTransport.sendMail(local_mail_option)
-// .then(()=>{
-// req.session.signUpOtp=otp;
-// req.session.signUpEmail=emailId;
-// res.status(200).send('200');
-// })
-// .catch(err=>{
-//     console.log(err)
-//     recordErr('While sending email',err);
-// });
+    await signup_auth.create(authObject);
 
-
-    }else{
-        res.status(421)
-    }
-}
+    return res.status(200).send('200');
 
 }catch(err){
     recordErr('send_email_otp',err);
@@ -93,20 +91,17 @@ route.post('/confirm_otp', async(req,res)=>{
         let clientEmail=req.body.emailId;
         let clientOtp=req.body.otp;
 
-if(req.session.signUpOtp==clientOtp && req.session.signUpEmail==clientEmail){
-res.status(200).send('200');
+        let latestDocument = await signup_auth.findOne({ email: clientEmail, otp_sent_time:{$gte: new Date(new Date().getTime() - 20 * 60 * 1000) }}).sort({ timeField: -1 });
+        console.log(latestDocument)
 
+if(!latestDocument)
+    return res.status(401).send('401');
+
+if(clientOtp===latestDocument.otp){
+    return res.status(200).send('200');
 }else{
-    if(req.session.signUpTries==undefined){
-        req.session.signUpTries='true';
-        res.status(200).send('201');
-    }else{
-        res.status(401).send('401');
-    }
-}
-
-        
-        
+    return res.status(200).send('201');;
+}       
     }catch(err){
         recordErr('confirm_otp',err);
         console.log(err)

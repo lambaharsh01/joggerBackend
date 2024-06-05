@@ -115,3 +115,39 @@ ReferenceError: JingalalaHurHur is not defined
     at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
     at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
 
+Error Time 05-06-2024 10:51:17 pm at send_email_otp 
+ReferenceError: YourModel is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:50:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Error Time 05-06-2024 11:29:02 pm at confirm_otp 
+ReferenceError: YourModel is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:107:30
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
+Error Time 05-06-2024 11:36:40 pm at confirm_otp 
+ReferenceError: password is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:112:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Error Time 05-06-2024 11:48:33 pm at final_user_signup 
+ReferenceError: bcrypt is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:118:5
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
