@@ -1,7 +1,10 @@
+
 const recordErr=require('../../middleWare/recordErrors');
+const jwt=require('jsonwebtoken');
 
 exports.get_auth=async(req,res)=>{
     try{
+
     let authenticate={
     auth:null,
     user_email:null,
@@ -11,16 +14,28 @@ exports.get_auth=async(req,res)=>{
     logOutTime:null
     }
 
-    if(req.session.user_id && req.session.first_name && req.session.user_type){
+    const token = req.header('Authorization')?.split(' ')?.[1] ?? null; 
+
+    if (!token)
+        return res.status(200).json({authenticate});
+
+try{
+    const verified = jwt.verify(token, process.env.SESS_KEY);
+
+    if(verified.user_id && verified.first_name && verified.user_type){
         authenticate.auth=true;
-        authenticate.user_email=req.session.user_id;
-        authenticate.user_name= req.session.first_name+' '+req.session.last_name;
-        authenticate.user_type= req.session.user_type;
-        authenticate.loginTime=req.session.loginTime;
-        authenticate.logOutTime=req.session.logOutTime
+        authenticate.user_email=verified.user_id;
+        authenticate.user_name= verified.first_name+' '+verified.last_name;
+        authenticate.user_type= verified.user_type;
+        authenticate.loginTime=verified.loginTime;
+        authenticate.logOutTime=verified.logOutTime
     }
 
-    res.status(200).json({authenticate:authenticate})  
+    res.status(200).json({authenticate})  
+
+}catch(error){
+    res.status(200).json({authenticate});
+}
 
     }catch(err){
         recordErr('get_headers',err);

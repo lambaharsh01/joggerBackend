@@ -4,6 +4,8 @@ const route=express.Router();
 const bcrypt=require('bcryptjs');
 const moment=require('moment');
 
+const jwt=require('jsonwebtoken');
+
 let user_details=require('../../db_schemas/user_details.js');
 const recordErr=require('../../middleWare/recordErrors');
 
@@ -21,15 +23,21 @@ route.post('/auth_user_login', async(req,res)=>{
         let loginTime=moment().format();
         let logoutTime=moment(loginTime).add((1000 * 60 * 60 * 2),'milliseconds').format();
 
-        req.session.user_id=user_info.email;
-        req.session.first_name=user_info.first_name;
-        req.session.last_name=user_info.last_name;
-        req.session.phone_number=user_info.phone_number;
-        req.session.user_type= req.session.user_id==='lambaharsh01@gmail.com'? 'admin':'user';
-        req.session.loginTime= loginTime;
-        req.session.logOutTime= logoutTime;
 
-        res.status(200).send('200');
+let user={
+    user_id: user_info.email,
+    first_name: user_info.first_name,
+    last_name: user_info.last_name,
+    phone_number: user_info.phone_number,
+    user_type: user_info.email==='lambaharsh01@gmail.com'? 'admin':'user',
+    loginTime: loginTime,
+    logOutTime: logoutTime
+}
+
+const token = jwt.sign(user, process.env.SESS_KEY, { expiresIn: '1h' });
+
+
+        res.status(200).json({success: true, token});
 
         }else{
             res.status(401).send('401')
@@ -48,6 +56,7 @@ route.post('/auth_user_login', async(req,res)=>{
 
 // LOGIN END
 // LOGIN END
+
 
 
 
