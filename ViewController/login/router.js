@@ -6,6 +6,8 @@ const moment=require('moment');
 
 const jwt=require('jsonwebtoken');
 
+const jwtAuth=require('../../middleWare/jwtAuth.js')
+
 let user_details=require('../../db_schemas/user_details.js');
 const recordErr=require('../../middleWare/recordErrors');
 
@@ -63,10 +65,8 @@ const token = jwt.sign(user, process.env.SESS_KEY, { expiresIn: '1h' });
 // LOGOUT START
 route.post('/destroy_session', async(req,res)=>{
     try{
-        req.session.destroy((err) => {
-            if (err) throw err;
             res.status(200).send('200')
-        });
+    
     }catch(err){
         recordErr('destroy_session',err);
         res.status(400).send('something went wrong');

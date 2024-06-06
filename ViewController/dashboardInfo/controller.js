@@ -4,9 +4,6 @@ const recordErr=require('../../middleWare/recordErrors');
 
 exports.add_dashboard_main_banner_details=async(req, res)=>{
     try{
-
-        // admin task
-        // CSRF
         
         let file_name=req.file ? req.file.filename:null;
         let mainHeading=req.body.mainHeading;
@@ -58,8 +55,7 @@ exports.get_dashboard_data=async(req,res)=>{
 
 exports.setTextBanner=async(req, res)=>{
     try{
-        // admin task
-        //CSRF
+
         let {smallHeadingText, largeHeadingText, normalHeadingText, headingLink}=req.body
     
         let baseObject={};

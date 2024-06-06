@@ -3,15 +3,12 @@ const dashboard_info=require('../../db_schemas/dashboard_info.js');//minor use
 const cart_info=require('../../db_schemas/cart_info.js');//minor use
 const orders_info=require('../../db_schemas/orders_info.js');//minor use
 
-
 const recordErr=require('../../middleWare/recordErrors.js');
 
 
-  
 exports.add_list_data=async(req,res)=>{
     try{
-        // admin task
-        // CSRF
+ 
         const crousalImage1File = req.files['crousalImage1'] ? req.files['crousalImage1'][0].filename : null;
         const crousalImage2File = req.files['crousalImage2'] ? req.files['crousalImage2'][0].filename : null;
         const crousalImage3File = req.files['crousalImage3'] ? req.files['crousalImage3'][0].filename : null;
@@ -41,8 +38,6 @@ if(validateAddition(productName,productShortDiscription,selectedMainCatagory,sel
 exports.update_list_data=async(req,res)=>{
     try{
 
-        // admin task
-        // CSRF
 const crousalImage1File = req.files['crousalImage1'] ? {product_picture1:req.files['crousalImage1'][0].filename} : {};
 const crousalImage2File = req.files['crousalImage2'] ? {product_picture2:req.files['crousalImage2'][0].filename} : {};
 const crousalImage3File = req.files['crousalImage3'] ? {product_picture3:req.files['crousalImage3'][0].filename} : {};
@@ -144,8 +139,7 @@ exports.get_all_products=async(req,res)=>{
 
 exports.add_dashboard_first_slider_details=async(req, res)=>{
 try{  
-    // admin task  
-//CSRF
+
 let {firstSliderSource, selectedMainCatagory, selectedCatagory, selectedSubCatagory}=req.body;
 
 let productList=JSON.stringify([]); 
@@ -182,8 +176,6 @@ res.status(200).send('200');
 exports.add_dashboard_second_slider_details=async(req, res)=>{
     try{
 
-        // admin task
-    //CSRF
 let {secondSliderSource, selectedMainCatagory, selectedCatagory, selectedSubCatagory}=req.body
     
 let productList=JSON.stringify([]); 
@@ -219,8 +211,6 @@ await dashboard_info.updateOne({dashboard:'Main Dashboard'}, {second_slider_head
 exports.setFeaturedProduct2=async(req, res)=>{
     try{
     
-        // admin task
-        //CSRF
         let {featuredProduct2Id, featuredTwo, featuredProduct2Heading, featuredProduct2FontColor, featuredProduct2ButtonColor, featuredProduct2ButtonFontColor}=req.body
     
         let baseObject={};
@@ -264,8 +254,7 @@ exports.setFeaturedProduct2=async(req, res)=>{
     
 exports.setFeaturedProduct1=async(req, res)=>{
 try{
-    // admin task
-    //CSRF
+
     let {featuredProduct1Id, featuredOne, featuredProduct1Heading, featuredProduct1FontColor, featuredProduct1ButtonColor, featuredProduct1ButtonFontColor}=req.body
 
     
@@ -355,7 +344,6 @@ exports.deleteThisProduct=async(req,res)=>{
     try{
 
 let productId=req.params.productId;
-    // if(req.session.user_id==='lambaharsh01@gmail.com'){
 let productInfo=await product_info.findById(productId);
 
 await product_info.deleteOne({ _id:productId});
@@ -365,10 +353,6 @@ let mainCatagory=productInfo.product_main_catagory;
 let catagory=productInfo.product_catagory;
 
 res.status(200).json({mainCatagory:mainCatagory, catagory:catagory})
-
-    // }else{
-    //     res.status(409).send('409');
-    // }
 
 
     }catch(err){
@@ -381,10 +365,8 @@ res.status(200).json({mainCatagory:mainCatagory, catagory:catagory})
 
 exports.get_cart_details_per_user=async(req,res)=>{
     try{
-    // CSRF USER AUTH
 
-    let userId=req.session.user_id;
-    // let userId=req.session.user_id;
+    let userId=req.user.user_id;
 
     let cartItems=await cart_info.find({user_id:userId}, {product_id:1}).sort({time:1});
 
@@ -406,13 +388,12 @@ res.status(200).json({products:products})
 exports.place_order= async(req,res)=>{
     try{
     
-        // CSRF
     let {address, productId, productSelectedSize, productPrice, productQuanitity, totalBill, currency}=req.body;
     
     let productInformation=await product_info.findOne({_id:productId}, {produt_name:1 ,product_picture1:1});
     
     
-    let orderData={user_id:req.session.user_id, product_id:productId,quantity:productQuanitity,  product_size:productSelectedSize, currency:currency, product_price:productPrice, totalBill:totalBill, address:address, product_name:productInformation? productInformation.produt_name:'', product_img:productInformation? productInformation.product_picture1:''};
+    let orderData={user_id:req.user.user_id, product_id:productId,quantity:productQuanitity,  product_size:productSelectedSize, currency:currency, product_price:productPrice, totalBill:totalBill, address:address, product_name:productInformation? productInformation.produt_name:'', product_img:productInformation? productInformation.product_picture1:''};
     
     await orders_info.create(orderData);
     res.status(200).send('200');
@@ -427,7 +408,6 @@ exports.place_order= async(req,res)=>{
 
 exports.buy_whole_cart= async(req,res)=>{
     try{
-    // CSRF
     
     let {productDetails, address}=req.body;
     
@@ -442,7 +422,7 @@ exports.buy_whole_cart= async(req,res)=>{
     
     
     let orderInfo=productDetails.map((element, index)=>{
-       element.user_id=req.session.user_id;
+       element.user_id=req.user.user_id;
        element.address=address;
        element.product_name=productNameImg[index].name;
        element.product_img=productNameImg[index].img;

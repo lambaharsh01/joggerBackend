@@ -115,3 +115,127 @@ ReferenceError: JingalalaHurHur is not defined
     at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
     at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
 
+Error Time 05-06-2024 10:51:17 pm at send_email_otp 
+ReferenceError: YourModel is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:50:19
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Error Time 05-06-2024 11:29:02 pm at confirm_otp 
+ReferenceError: YourModel is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:107:30
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
+Error Time 05-06-2024 11:36:40 pm at confirm_otp 
+ReferenceError: password is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:112:25
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Error Time 05-06-2024 11:48:33 pm at final_user_signup 
+ReferenceError: bcrypt is not defined
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\signUp\router.js:118:5
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:47:12)
+
+Error Time 06-06-2024 06:20:05 am at add_to_cart 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.add_to_cart (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\cartInfo\controller.js:29:24)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at module.exports (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\middleWare\jwtAuth.js:13:17)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+
+Error Time 06-06-2024 06:24:58 am at get_cart_details_per_user 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.get_cart_details_per_user (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:379:25)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at fileAuth (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\middleWare\fileAuth.js:20:9)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+
+Error Time 06-06-2024 06:25:40 am at get_cart_details_per_user 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.get_cart_details_per_user (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:379:25)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at fileAuth (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\middleWare\fileAuth.js:20:9)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+
+Error Time 06-06-2024 06:28:19 am at get_cart_details_per_user 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.get_cart_details_per_user (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:379:25)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at fileAuth (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\middleWare\fileAuth.js:22:9)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+
+Error Time 06-06-2024 06:32:46 am at get_cart_details_per_user 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.get_cart_details_per_user (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:379:25)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at fileAuth (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\middleWare\fileAuth.js:22:9)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+
+Error Time 06-06-2024 06:33:43 am at get_cart_details_per_user 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.get_cart_details_per_user (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:379:25)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at fileAuth (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\middleWare\fileAuth.js:22:9)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\node_modules\express\lib\router\index.js:346:12)
+
+Error Time 06-06-2024 06:37:44 am at place_order 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.place_order (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:407:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+Error Time 06-06-2024 06:38:40 am at place_order 
+TypeError: Cannot read properties of undefined (reading 'user_id')
+    at exports.place_order (C:\Users\Harsh's PC\OneDrive\Desktop\joggerBackend\server\ViewController\productInfo\controller.js:407:37)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+

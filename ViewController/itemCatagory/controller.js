@@ -51,10 +51,9 @@ exports.getPerCatagory= async(req,res)=>{
 
 exports.saveHeader=async(req,res)=>{
     try{
-// admin task
+
         let{header, mainHeading, subHeading}=req.body;
-        
-        // CSRF
+
         let stringedCatagory=JSON.stringify(mainHeading);
         let stringedSubCatagory=JSON.stringify(subHeading);
 

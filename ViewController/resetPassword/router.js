@@ -57,12 +57,6 @@ if(confirmPassword===password){
 route.post('/send_email_for_pass_reset', async(req,res)=>{
     try{
     let email=req.body.emailId;
-   
-    if(req.session.signUpTries){
-        delete req.session.signUpOtp;
-        delete req.session.signUpEmail;
-        delete req.session.signUpTries;
-    }
 
     let authenticate=await user_details.findOne({email});
     if(authenticate){
@@ -86,8 +80,6 @@ await new Promise((resolve, reject)=>{
     });
 });
 
-req.session.signUpOtp=otp;
-req.session.signUpEmail=email;
 res.status(200).send('200');
 
 }else{

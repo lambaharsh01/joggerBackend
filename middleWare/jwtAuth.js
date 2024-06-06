@@ -1,8 +1,8 @@
 const jwt=require('jsonwebtoken');
 
-module.exports= function(req, res, next) {
+module.exports= function jwtAuth(req, res, next) {
 
-    const token = req.header('Authorization')?.split(' ')?.[1] ?? null; 
+    const token = req.header('Authorization')?.split(' ')?.[1] ?? null;
 
         if (!token)
             return res.status(401).json({code:401, success:false, message: 'Unauthorized: No token provided' });
