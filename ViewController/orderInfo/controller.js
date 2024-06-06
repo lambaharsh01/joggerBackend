@@ -2,10 +2,9 @@ const orders_info=require('../../db_schemas/orders_info.js');
 const recordErr=require('../../middleWare/recordErrors');
 exports.get_user_order_info=async(req,res)=>{
     try{
-    // CSRF
-    let userId=req.user.user_id;
+    let user_id=req.user.user_id;
     
-    let orders=await orders_info.find({userId}).sort({order_time:-1});
+    let orders=await orders_info.find({user_id}).sort({order_time:-1});
     
     res.status(200).json({orders:orders});
     
@@ -18,7 +17,7 @@ exports.get_user_order_info=async(req,res)=>{
 
 exports.cancelOrder= async(req,res)=>{
     try{
-// csrf
+
 let _id=req.params.orderId;
 
 await orders_info.deleteOne({_id});

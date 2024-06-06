@@ -8,8 +8,7 @@ const recordErr=require('../../middleWare/recordErrors.js');
 
 exports.add_list_data=async(req,res)=>{
     try{
-        // admin task
-        // CSRF
+ 
         const crousalImage1File = req.files['crousalImage1'] ? req.files['crousalImage1'][0].filename : null;
         const crousalImage2File = req.files['crousalImage2'] ? req.files['crousalImage2'][0].filename : null;
         const crousalImage3File = req.files['crousalImage3'] ? req.files['crousalImage3'][0].filename : null;
@@ -39,8 +38,6 @@ if(validateAddition(productName,productShortDiscription,selectedMainCatagory,sel
 exports.update_list_data=async(req,res)=>{
     try{
 
-        // admin task
-        // CSRF
 const crousalImage1File = req.files['crousalImage1'] ? {product_picture1:req.files['crousalImage1'][0].filename} : {};
 const crousalImage2File = req.files['crousalImage2'] ? {product_picture2:req.files['crousalImage2'][0].filename} : {};
 const crousalImage3File = req.files['crousalImage3'] ? {product_picture3:req.files['crousalImage3'][0].filename} : {};
@@ -142,8 +139,7 @@ exports.get_all_products=async(req,res)=>{
 
 exports.add_dashboard_first_slider_details=async(req, res)=>{
 try{  
-    // admin task  
-//CSRF
+
 let {firstSliderSource, selectedMainCatagory, selectedCatagory, selectedSubCatagory}=req.body;
 
 let productList=JSON.stringify([]); 
@@ -180,8 +176,6 @@ res.status(200).send('200');
 exports.add_dashboard_second_slider_details=async(req, res)=>{
     try{
 
-        // admin task
-    //CSRF
 let {secondSliderSource, selectedMainCatagory, selectedCatagory, selectedSubCatagory}=req.body
     
 let productList=JSON.stringify([]); 
@@ -217,8 +211,6 @@ await dashboard_info.updateOne({dashboard:'Main Dashboard'}, {second_slider_head
 exports.setFeaturedProduct2=async(req, res)=>{
     try{
     
-        // admin task
-        //CSRF
         let {featuredProduct2Id, featuredTwo, featuredProduct2Heading, featuredProduct2FontColor, featuredProduct2ButtonColor, featuredProduct2ButtonFontColor}=req.body
     
         let baseObject={};
@@ -262,8 +254,7 @@ exports.setFeaturedProduct2=async(req, res)=>{
     
 exports.setFeaturedProduct1=async(req, res)=>{
 try{
-    // admin task
-    //CSRF
+
     let {featuredProduct1Id, featuredOne, featuredProduct1Heading, featuredProduct1FontColor, featuredProduct1ButtonColor, featuredProduct1ButtonFontColor}=req.body
 
     
@@ -374,7 +365,6 @@ res.status(200).json({mainCatagory:mainCatagory, catagory:catagory})
 
 exports.get_cart_details_per_user=async(req,res)=>{
     try{
-    // CSRF USER AUTH
 
     let userId=req.user.user_id;
 
@@ -398,7 +388,6 @@ res.status(200).json({products:products})
 exports.place_order= async(req,res)=>{
     try{
     
-        // CSRF
     let {address, productId, productSelectedSize, productPrice, productQuanitity, totalBill, currency}=req.body;
     
     let productInformation=await product_info.findOne({_id:productId}, {produt_name:1 ,product_picture1:1});
@@ -419,7 +408,6 @@ exports.place_order= async(req,res)=>{
 
 exports.buy_whole_cart= async(req,res)=>{
     try{
-    // CSRF
     
     let {productDetails, address}=req.body;
     

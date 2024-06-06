@@ -2,8 +2,8 @@ const express=require('express');
 const multer=require('multer')
 const route=express.Router();
 
-const fileAuth=require('../../middleWare/jwtAuth.js');
-const jwtAuth=require('../../middleWare/fileAuth.js');
+const jwtAuth=require('../../middleWare/jwtAuth.js');
+const  fileAuth=require('../../middleWare/fileAuth.js');
 
 const controller=require('./controller');
 
@@ -42,7 +42,7 @@ if(file){
 
 const upload1 = multer({fileFilter:fileAuth, storage: storage1});
 
-route.post('/add_list_data', upload1.fields([
+route.post('/add_list_data', jwtAuth, upload1.fields([
     { name: 'crousalImage1', maxCount: 1 },
     { name: 'crousalImage2', maxCount: 1 },
     { name: 'crousalImage3', maxCount: 1 },
@@ -51,7 +51,7 @@ route.post('/add_list_data', upload1.fields([
   controller.add_list_data
 );
 
-route.post('/update_list_data', upload1.fields([
+route.post('/update_list_data', jwtAuth, upload1.fields([
     { name: 'crousalImage1', maxCount: 1 },
     { name: 'crousalImage2', maxCount: 1 },
     { name: 'crousalImage3', maxCount: 1 },
@@ -65,13 +65,13 @@ route.get('/getRelatedProducts/:main_catagory/:catagory/:product_name', controll
 
 route.get('/get_all_products', controller.get_all_products);
 
-route.post('/add_dashboard_first_slider_details', controller.add_dashboard_first_slider_details);
+route.post('/add_dashboard_first_slider_details', jwtAuth, controller.add_dashboard_first_slider_details);
 
-route.post('/add_dashboard_second_slider_details', controller.add_dashboard_second_slider_details);
+route.post('/add_dashboard_second_slider_details', jwtAuth, controller.add_dashboard_second_slider_details);
 
-route.post('/setFeaturedProduct2', controller.setFeaturedProduct2);
+route.post('/setFeaturedProduct2', jwtAuth, controller.setFeaturedProduct2);
 
-route.post('/setFeaturedProduct1', controller.setFeaturedProduct1);
+route.post('/setFeaturedProduct1', jwtAuth, controller.setFeaturedProduct1);
 
 route.get('/getProductsLazily/:from/:main_catagory/:catagory/:sub_catagory', controller.getProductsLazily);
 
@@ -79,8 +79,8 @@ route.delete('/deleteThisProduct/:productId', controller.deleteThisProduct);
 
 route.get('/get_cart_details_per_user', jwtAuth, controller.get_cart_details_per_user);
 
-route.post('/place_order', controller.place_order);
+route.post('/place_order', jwtAuth, controller.place_order);
     
-route.post('/buy_whole_cart', controller.buy_whole_cart);
+route.post('/buy_whole_cart', jwtAuth, controller.buy_whole_cart);
 
 module.exports=route;

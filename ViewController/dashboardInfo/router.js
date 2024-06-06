@@ -5,6 +5,7 @@ const route=express.Router();
 const controller=require('./controller.js');
 
 const fileAuth=require('../../middleWare/fileAuth.js');
+const jwtAuth=require('../../middleWare/jwtAuth.js');
 
 
 function generateRandomValue(){
@@ -41,8 +42,8 @@ const upload2 = multer({fileFilter:fileAuth, storage: storage2});
 
 route.get('/get_dashboard_data', controller.get_dashboard_data);
 
-route.post('/add_dashboard_main_banner_details', upload2.single('backgroundImg'), controller.add_dashboard_main_banner_details);
+route.post('/add_dashboard_main_banner_details', jwtAuth, upload2.single('backgroundImg'), controller.add_dashboard_main_banner_details);
 
-route.post('/setTextBanner',controller.setTextBanner);
+route.post('/setTextBanner', jwtAuth, controller.setTextBanner);
 
 module.exports=route;

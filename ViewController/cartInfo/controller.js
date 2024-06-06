@@ -24,9 +24,8 @@ let productId=req.params.productId;
 
 exports.add_to_cart=async(req,res)=>{
     try{
-// csrf
 
-let userId=req.session.user_id;
+let userId=req.user.user_id;
 let productId=req.body.productId;
 
 let existingProduct=await cart_info.findOne({user_id:userId, product_id:productId});
@@ -46,8 +45,7 @@ if(existingProduct){
 
 exports.remove_from_cart=async(req,res)=>{
     try{
-// csrf
-let userId=req.session.user_id;
+let userId=req.user.user_id;
 let productId=req.body.productId;
 
 

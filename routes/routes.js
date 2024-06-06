@@ -56,7 +56,6 @@ const productInfo= require('../ViewController/productInfo/router');
 const resetPassword= require('../ViewController/resetPassword/router');
 const signUp= require('../ViewController/signUp/router');
 
-
 route.use('/', authenticationApis);
 route.use('/', callander);
 route.use('/', cartInfo);
