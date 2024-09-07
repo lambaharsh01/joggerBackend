@@ -21,6 +21,10 @@ app.use(cors({
 
 app.use('/', routes)
 
+app.get("/handshake", (req, res) =>
+  res.status(200).send("Connection Established")
+);
+
 app.listen(port, ()=>{
     console.log('Listening on Port: '+port)
 })
